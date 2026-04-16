@@ -3,772 +3,163 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ovella — Earlier Answers. Real Relief. Long-Term Support.</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Ovella — Personalized Pain Management</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
-  : root {
-    --rose: #C01E5C;
-    --rose-light: #E8526A;
-    --blush: #FFF0F3;
-    --blush-mid: #F9DDE5;
-    --cream: #FDF8F5;
-    --charcoal: #1A1018;
-    --muted: #7A6070;
-    --white: #FFFFFF;
-  }
+:root {
+  --rose: #C01E5C;
+  --blush: #FFF0F3;
+  --cream: #FDF8F5;
+  --charcoal: #1A1018;
+  --muted: #7A6070;
+}
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--charcoal);
+}
 
-  html { scroll-behavior: smooth; }
+/* HERO */
+.hero {
+  padding: 6rem 2rem;
+  text-align: center;
+}
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    color: var(--charcoal);
-    overflow-x: hidden;
-  }
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 300;
+}
 
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1.25rem 3rem;
-    background: rgba(253,248,245,0.88);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(192,30,92,0.1);
-  }
-  .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem; font-weight: 600; color: var(--rose);
-    text-decoration: none; letter-spacing: 0.04em;
-    display: flex; align-items: center; gap: 0.5rem;
-  }
-  .nav-logo svg { width: 26px; height: 26px; }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a {
-    text-decoration: none; color: var(--muted); font-size: 0.88rem;
-    font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--rose); }
-  .nav-cta {
-    background: var(--rose); color: white !important;
-    padding: 0.55rem 1.4rem; border-radius: 100px;
-    font-size: 0.82rem !important; font-weight: 500 !important;
-    transition: background 0.2s, transform 0.15s !important;
-  }
-  .nav-cta:hover { background: var(--rose-light) !important; transform: translateY(-1px); }
+em { color: var(--rose); }
 
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    display: grid; grid-template-columns: 1fr 1fr;
-    align-items: center;
-    padding: 8rem 3rem 4rem;
-    position: relative; overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute; top: -10%; right: -5%;
-    width: 55%; height: 110%;
-    background: radial-gradient(ellipse at 60% 40%, #f9c7d6 0%, #fde8ee 45%, transparent 75%);
-    z-index: 0; border-radius: 60% 40% 50% 50% / 50% 50% 40% 60%;
-  }
-  .hero-text { position: relative; z-index: 1; max-width: 560px; }
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: var(--blush-mid); color: var(--rose);
-    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em;
-    text-transform: uppercase; padding: 0.4rem 1rem; border-radius: 100px;
-    margin-bottom: 2rem;
-  }
-  .hero-badge span { width: 6px; height: 6px; background: var(--rose); border-radius: 50%; }
-  .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3rem, 5.5vw, 5.5rem);
-    font-weight: 300; line-height: 1.08;
-    color: var(--charcoal); margin-bottom: 1.5rem;
-  }
-  .hero h1 em { color: var(--rose); font-style: italic; }
-  .hero p {
-    font-size: 1.05rem; color: var(--muted); line-height: 1.75;
-    margin-bottom: 2.5rem; max-width: 440px;
-  }
-  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
-  .btn-primary {
-    background: var(--rose); color: white;
-    padding: 0.9rem 2rem; border-radius: 100px;
-    font-size: 0.9rem; font-weight: 500; text-decoration: none;
-    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-    box-shadow: 0 4px 20px rgba(192,30,92,0.35);
-  }
-  .btn-primary:hover { background: var(--rose-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(192,30,92,0.4); }
-  .btn-secondary {
-    color: var(--rose); font-size: 0.9rem; font-weight: 500;
-    text-decoration: none; display: flex; align-items: center; gap: 0.4rem;
-    transition: gap 0.2s;
-  }
-  .btn-secondary:hover { gap: 0.7rem; }
-  .hero-stats {
-    display: flex; gap: 2.5rem; margin-top: 3.5rem;
-    padding-top: 2.5rem; border-top: 1px solid var(--blush-mid);
-  }
-  .stat-val {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem; font-weight: 500; color: var(--rose); line-height: 1;
-  }
-  .stat-label { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; line-height: 1.4; }
+p {
+  color: var(--muted);
+  max-width: 500px;
+  margin: 1rem auto;
+  line-height: 1.6;
+}
 
-  .hero-visual { position: relative; z-index: 1; display: flex; justify-content: center; align-items: center; }
-  .hero-device {
-    width: 300px; height: 360px;
-    background: linear-gradient(145deg, #fff 0%, #fde8ee 100%);
-    border-radius: 50% 50% 45% 45% / 55% 55% 45% 45%;
-    box-shadow: 0 30px 80px rgba(192,30,92,0.18), 0 8px 30px rgba(0,0,0,0.06);
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 1.2rem; position: relative; overflow: hidden;
-  }
-  .hero-device::after {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.6) 0%, transparent 60%);
-  }
-  .device-icon { font-size: 3.5rem; }
-  .device-label {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4rem; color: var(--rose); font-weight: 500; text-align: center;
-  }
-  .device-sub { font-size: 0.78rem; color: var(--muted); text-align: center; }
-  .floating-badge {
-    position: absolute;
-    background: white; border-radius: 12px;
-    padding: 0.7rem 1rem; box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-    font-size: 0.78rem; font-weight: 500;
-  }
-  .badge-ai { top: -10px; right: -30px; color: var(--rose); }
-  .badge-fda { bottom: 20px; left: -40px; color: var(--muted); }
-  .badge-users { top: 50%; right: -50px; color: var(--charcoal); }
-  .badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; display: inline-block; margin-right: 4px; }
+/* BUTTON */
+input {
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  border: 1px solid #eee;
+  width: 250px;
+}
 
-  /* ── SECTION SHARED ── */
-  section { padding: 6rem 3rem; }
-  .section-label {
-    font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--rose); font-weight: 500; margin-bottom: 0.8rem;
-  }
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.2rem, 4vw, 3.5rem);
-    font-weight: 300; line-height: 1.15; color: var(--charcoal);
-  }
-  .section-title em { color: var(--rose); font-style: italic; }
+button {
+  padding: 0.8rem 1.5rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--rose);
+  color: white;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
 
-  /* ── PROBLEM ── */
-  .problem {
-    background: var(--charcoal);
-    position: relative; overflow: hidden;
-  }
-  .problem::before {
-    content: '';
-    position: absolute; bottom: -20%; left: -10%;
-    width: 60%; height: 140%;
-    background: radial-gradient(ellipse, rgba(192,30,92,0.2) 0%, transparent 70%);
-  }
-  .problem .inner { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; }
-  .problem .section-title { color: white; }
-  .problem .section-label { color: var(--rose-light); }
-  .problem p { color: rgba(255,255,255,0.65); font-size: 1.05rem; line-height: 1.8; max-width: 600px; margin: 1.5rem 0 3rem; }
-  .prob-cards {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-  }
-  .prob-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 16px; padding: 2rem;
-    transition: background 0.2s, transform 0.2s;
-  }
-  .prob-card:hover { background: rgba(255,255,255,0.08); transform: translateY(-3px); }
-  .prob-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3rem; color: var(--rose); font-weight: 300; line-height: 1;
-  }
-  .prob-card h3 { color: white; font-size: 0.95rem; font-weight: 500; margin: 0.8rem 0 0.5rem; }
-  .prob-card p { color: rgba(255,255,255,0.5); font-size: 0.85rem; line-height: 1.6; margin: 0; }
+/* STATS */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
 
-  /* ── SOLUTION ── */
-  .solution { background: var(--blush); }
-  .solution .inner { max-width: 1100px; margin: 0 auto; }
-  .solution-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
-    align-items: center; margin-top: 3.5rem;
-  }
-  .mech-list { display: flex; flex-direction: column; gap: 2rem; }
-  .mech-item {
-    display: grid; grid-template-columns: 56px 1fr; gap: 1.2rem;
-    align-items: start; cursor: default;
-    padding: 1.5rem; border-radius: 14px;
-    transition: background 0.2s;
-  }
-  .mech-item:hover { background: rgba(192,30,92,0.05); }
-  .mech-icon {
-    width: 52px; height: 52px; border-radius: 14px;
-    background: var(--rose); display: flex; align-items: center; justify-content: center;
-    font-size: 1.4rem; flex-shrink: 0;
-  }
-  .mech-item h3 { font-size: 1rem; font-weight: 600; color: var(--charcoal); margin-bottom: 0.4rem; }
-  .mech-item p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
-  .solution-visual {
-    background: white; border-radius: 24px;
-    padding: 2.5rem; box-shadow: 0 20px 60px rgba(0,0,0,0.07);
-  }
-  .sv-header { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 500; margin-bottom: 1.5rem; color: var(--charcoal); }
-  .sv-row { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 0; border-bottom: 1px solid #f0e8ec; }
-  .sv-row:last-child { border-bottom: none; }
-  .sv-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-  .sv-label { font-size: 0.85rem; color: var(--muted); flex: 1; }
-  .sv-val { font-size: 0.85rem; font-weight: 600; color: var(--rose); }
-  .sv-bar-wrap { flex: 1; height: 6px; background: #f0e8ec; border-radius: 3px; overflow: hidden; }
-  .sv-bar { height: 100%; background: var(--rose); border-radius: 3px; }
+.stat {
+  text-align: center;
+}
 
-  /* ── HOW IT WORKS ── */
-  .how { background: white; }
-  .how .inner { max-width: 1100px; margin: 0 auto; }
-  .how-steps {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 2rem; margin-top: 3.5rem;
-  }
-  .step {
-    padding: 2.5rem 2rem; border: 1px solid #f0e8ec; border-radius: 20px;
-    position: relative; transition: box-shadow 0.2s, transform 0.2s;
-  }
-  .step:hover { box-shadow: 0 16px 48px rgba(192,30,92,0.1); transform: translateY(-4px); }
-  .step-num {
-    position: absolute; top: -1px; left: 2rem;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 5rem; font-weight: 300; color: rgba(192,30,92,0.08);
-    line-height: 1; pointer-events: none;
-  }
-  .step-title { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.8rem; position: relative; z-index: 1; }
-  .step p { font-size: 0.87rem; color: var(--muted); line-height: 1.75; position: relative; z-index: 1; }
-  .step-tag {
-    display: inline-block; margin-top: 1.2rem;
-    background: var(--blush-mid); color: var(--rose);
-    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em;
-    text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 100px;
-  }
+.stat h2 {
+  color: var(--rose);
+  margin: 0;
+}
 
-  /* ── COMPARISON ── */
-  .compare { background: var(--cream); }
-  .compare .inner { max-width: 1100px; margin: 0 auto; }
-  .compare-intro { max-width: 560px; margin-bottom: 3.5rem; }
-  .compare-intro p { color: var(--muted); line-height: 1.75; margin-top: 1rem; }
-  .compare-table { width: 100%; border-collapse: collapse; }
-  .compare-table th {
-    text-align: left; font-size: 0.75rem; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--muted); font-weight: 500;
-    padding: 0.75rem 1.2rem; border-bottom: 2px solid #f0e8ec;
-  }
-  .compare-table td {
-    padding: 1rem 1.2rem; border-bottom: 1px solid #f0e8ec;
-    font-size: 0.88rem;
-  }
-  .compare-table tr.ov-row td { background: #fff5f8; }
-  .compare-table tr.ov-row td:first-child { font-weight: 700; color: var(--rose); border-left: 3px solid var(--rose); }
-  .check { color: var(--rose); font-size: 1.1rem; }
-  .cross { color: #ccc; font-size: 1.1rem; }
-  .price-cell { font-weight: 600; color: var(--charcoal); }
-  .price-cell.ov { color: var(--rose); }
+/* SECTION */
+section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
 
-  /* ── MARKET ── */
-  .market { background: var(--blush); }
-  .market .inner { max-width: 1100px; margin: 0 auto; }
-  .market-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: 3.5rem; }
-  .market p { color: var(--muted); line-height: 1.8; margin-top: 1rem; }
-  .tam-rings {
-    display: flex; flex-direction: column; gap: 1.2rem;
-  }
-  .tam-ring {
-    border-radius: 14px; padding: 1.4rem 1.8rem;
-    display: flex; justify-content: space-between; align-items: center;
-  }
-  .tam-ring.a { background: var(--rose); }
-  .tam-ring.b { background: rgba(192,30,92,0.55); }
-  .tam-ring.c { background: rgba(192,30,92,0.3); }
-  .tam-ring-label { color: white; font-size: 0.8rem; font-weight: 500; opacity: 0.85; }
-  .tam-ring-val { font-family: 'Cormorant Garamond', serif; color: white; font-size: 1.8rem; font-weight: 500; }
-  .tam-ring-sub { color: rgba(255,255,255,0.7); font-size: 0.72rem; margin-top: 0.1rem; }
-
-  /* ── VALIDATION ── */
-  .validation { background: white; }
-  .validation .inner { max-width: 1100px; margin: 0 auto; }
-  .val-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; margin-top: 3.5rem; }
-  .val-card {
-    background: var(--blush); border-radius: 20px; padding: 2rem;
-    transition: transform 0.2s;
-  }
-  .val-card:hover { transform: translateY(-4px); }
-  .val-big {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3.5rem; font-weight: 300; color: var(--rose); line-height: 1;
-  }
-  .val-card h3 { font-size: 0.95rem; font-weight: 600; margin: 0.7rem 0 0.4rem; }
-  .val-card p { font-size: 0.84rem; color: var(--muted); line-height: 1.65; }
-
-  /* ── TEAM ── */
-  .team { background: var(--cream); }
-  .team .inner { max-width: 1100px; margin: 0 auto; }
-  .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3.5rem; max-width: 600px; }
-  .team-card {
-    background: white; border-radius: 20px; padding: 2rem;
-    border: 1px solid #f0e8ec; transition: box-shadow 0.2s;
-  }
-  .team-card:hover { box-shadow: 0 12px 40px rgba(192,30,92,0.1); }
-  .team-avatar {
-    width: 64px; height: 64px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--rose), var(--rose-light));
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;
-    color: white; font-weight: 500; margin-bottom: 1rem;
-  }
-  .team-name { font-size: 1rem; font-weight: 600; }
-  .team-role { font-size: 0.8rem; color: var(--rose); margin: 0.2rem 0 0.7rem; font-weight: 500; }
-  .team-card p { font-size: 0.84rem; color: var(--muted); line-height: 1.65; }
-
-  /* ── CTA ── */
-  .cta-section {
-    background: var(--charcoal);
-    text-align: center; padding: 7rem 3rem;
-    position: relative; overflow: hidden;
-  }
-  .cta-section::before {
-    content: '';
-    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
-    width: 700px; height: 700px;
-    background: radial-gradient(circle, rgba(192,30,92,0.25) 0%, transparent 70%);
-  }
-  .cta-section .section-label { color: var(--rose-light); }
-  .cta-section h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    font-weight: 300; color: white; margin: 0.8rem 0 1.5rem; line-height: 1.1;
-    position: relative; z-index: 1;
-  }
-  .cta-section h2 em { color: var(--rose-light); font-style: italic; }
-  .cta-section p { color: rgba(255,255,255,0.55); font-size: 1rem; max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.75; position: relative; z-index: 1; }
-  .cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; z-index: 1; }
-  .btn-white {
-    background: white; color: var(--rose);
-    padding: 0.9rem 2rem; border-radius: 100px;
-    font-size: 0.9rem; font-weight: 600; text-decoration: none;
-    transition: transform 0.15s, box-shadow 0.2s;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  }
-  .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
-  .btn-ghost {
-    border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.85);
-    padding: 0.9rem 2rem; border-radius: 100px;
-    font-size: 0.9rem; font-weight: 500; text-decoration: none;
-    transition: border-color 0.2s, color 0.2s;
-  }
-  .btn-ghost:hover { border-color: rgba(255,255,255,0.6); color: white; }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--charcoal); border-top: 1px solid rgba(255,255,255,0.07);
-    padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center;
-  }
-  .footer-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem; color: rgba(255,255,255,0.4); font-weight: 400;
-  }
-  footer p { color: rgba(255,255,255,0.25); font-size: 0.78rem; }
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
-  }
-  .hero-text > * { animation: fadeUp 0.7s ease both; }
-  .hero-badge { animation-delay: 0.1s; }
-  .hero h1 { animation-delay: 0.2s; }
-  .hero p { animation-delay: 0.35s; }
-  .hero-actions { animation-delay: 0.5s; }
-  .hero-stats { animation-delay: 0.65s; }
-  .hero-device { animation: float 5s ease-in-out infinite; }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
-    .hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 3rem; }
-    .hero-visual { display: none; }
-    section { padding: 4rem 1.5rem; }
-    .prob-cards, .how-steps, .val-grid { grid-template-columns: 1fr; }
-    .solution-grid, .market-grid, .team-grid { grid-template-columns: 1fr; }
-    .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
-  }
+/* FOOTER */
+footer {
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #aaa;
+}
 </style>
 </head>
+
 <body>
 
-<!-- NAV -->
-<nav>
-  <a class="nav-logo" href="#">
-    <svg viewBox="0 0 32 32" fill="none"><path d="M16 3C16 3 8 9 8 17a8 8 0 0016 0c0-8-8-14-8-14z" fill="#C01E5C" opacity=".3"/><path d="M16 7C16 7 10 12 10 18a6 6 0 0012 0c0-6-6-11-6-11z" fill="#C01E5C" opacity=".6"/><path d="M16 12c0 0-3 3-3 6a3 3 0 006 0c0-3-3-6-3-6z" fill="#C01E5C"/></svg>
-    Ovella
-  </a>
-  <ul class="nav-links">
-    <li><a href="#problem">Problem</a></li>
-    <li><a href="#solution">Solution</a></li>
-    <li><a href="#compare">Why Ovella</a></li>
-    <li><a href="#market">Market</a></li>
-    <li><a href="#team">Team</a></li>
-    <li><a href="#contact" class="nav-cta">Get Early Access</a></li>
-  </ul>
-</nav>
-
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-text">
-    <div class="hero-badge"><span></span>FemTech · Endometriosis Care</div>
-    <h1>Pain management,<br><em>finally personalized</em><br>for you.</h1>
-    <p>Ovella is a wearable smart device combining TENS neuromodulation, localized heat monitoring, and adaptive AI — delivering continuous, non-invasive relief for the 190 million women living with endometriosis.</p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Join Waitlist →</a>
-      <a href="#solution" class="btn-secondary">How it works ↓</a>
+<div class="hero">
+  <h1>
+    Pain management,<br>
+    <em>finally personalized</em>
+  </h1>
+
+  <p>
+    Ovella is a prototype wearable exploring new ways to deliver personalized, non-invasive relief for people living with endometriosis.
+  </p>
+
+  <!-- EMAIL FORM -->
+  <form action="https://formspree.io/f/mqewejeg" method="POST">
+    <input type="email" name="email" placeholder="Enter your email" required>
+    <input type="hidden" name="interest" value="ovella_waitlist">
+    <button type="submit">Join Waitlist</button>
+  </form>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat">
+      <h2>190M</h2>
+      <div>women affected</div>
     </div>
-    <div class="hero-stats">
-      <div>
-        <div class="stat-val">190M</div>
-        <div class="stat-label">women affected<br>worldwide</div>
-      </div>
-      <div>
-        <div class="stat-val">4–11</div>
-        <div class="stat-label">years avg. to<br>diagnosis</div>
-      </div>
-      <div>
-        <div class="stat-val">94%</div>
-        <div class="stat-label">AI screening<br>accuracy</div>
-      </div>
+    <div class="stat">
+      <h2>4–11 yrs</h2>
+      <div>to diagnosis</div>
+    </div>
+    <div class="stat">
+      <h2>Prototype</h2>
+      <div>AI model in development</div>
     </div>
   </div>
-  <div class="hero-visual">
-    <div class="hero-device">
-      <div class="device-icon">🌸</div>
-      <div class="device-label">Ovella Pouch</div>
-      <div class="device-sub">Wearable · Non-invasive</div>
-    </div>
-    <div class="floating-badge badge-ai">🤖 AI-Adaptive TENS</div>
-    <div class="floating-badge badge-users"><span class="badge-dot"></span>86% user demand</div>
-    <div class="floating-badge badge-fda">PMDA Compliant</div>
-  </div>
-</section>
+
+  <!-- AWARDS -->
+  <p style="margin-top:1.5rem; font-size:0.8rem;">
+    As seen in <strong>Blue Ocean Top 100 (2026)</strong> · 
+    <strong>Diamond Challenge Semifinalist</strong>
+  </p>
+</div>
 
 <!-- PROBLEM -->
-<section class="problem" id="problem">
-  <div class="inner">
-    <div class="section-label">The Problem</div>
-    <h2 class="section-title" style="color:white;">Endometriosis is <em style="color:#E8526A;font-style:italic;">chronic</em>,<br>yet care has barely kept up.</h2>
-    <p>Despite affecting 1 in 10 women, endometriosis remains widely underdiagnosed and undertreated — leaving millions in pain, in debt, and without answers.</p>
-    <div class="prob-cards">
-      <div class="prob-card">
-        <div class="prob-num">4–11</div>
-        <h3>Years to Diagnosis</h3>
-        <p>Symptom overlap and trivialized menstrual pain delay answers for most patients — years of unmanaged suffering that are entirely preventable.</p>
-      </div>
-      <div class="prob-card">
-        <div class="prob-num">$20K</div>
-        <h3>Annual Cost Per Patient</h3>
-        <p>Surgery, hormone therapies, repeated hospital visits, and medications create a crushing financial burden with no long-term cure in sight.</p>
-      </div>
-      <div class="prob-card">
-        <div class="prob-num">62%</div>
-        <h3>Recurrence Post-Surgery</h3>
-        <p>Even after a hysterectomy, lesions regrow in over half of patients when ovaries are preserved — underscoring the urgent need for better management.</p>
-      </div>
-    </div>
-  </div>
+<section>
+  <h1>The problem</h1>
+  <p>
+    Endometriosis affects 1 in 10 women, yet diagnosis can take years and treatment options remain limited, expensive, and often invasive.
+  </p>
 </section>
 
 <!-- SOLUTION -->
-<section class="solution" id="solution">
-  <div class="inner">
-    <div class="section-label">Our Solution</div>
-    <h2 class="section-title">Three mechanisms.<br><em>One intelligent device.</em></h2>
-    <div class="solution-grid">
-      <div class="mech-list">
-        <div class="mech-item">
-          <div class="mech-icon">⚡</div>
-          <div>
-            <h3>TENS Neuromodulation</h3>
-            <p>Low-frequency electrical stimulation activates large Aβ sensory fibers to "close the gate" in the spinal cord — blocking inflammatory pain signals before they reach the brain and calming chronic nerve activity.</p>
-          </div>
-        </div>
-        <div class="mech-item">
-          <div class="mech-icon">🌡️</div>
-          <div>
-            <h3>Localized Heat Monitoring</h3>
-            <p>Dual NTC thermistors differentiate device-generated heat from inflammatory heat, creating a closed-loop system that tracks tissue temperature patterns over time for earlier screening and smarter symptom tracking.</p>
-          </div>
-        </div>
-        <div class="mech-item">
-          <div class="mech-icon">🧠</div>
-          <div>
-            <h3>Adaptive AI Learning Model</h3>
-            <p>A multimodal neural network fuses objective sensor data with user-reported symptoms to continuously optimize TENS parameters after each session — delivering truly personalized, responsive pain management.</p>
-          </div>
-        </div>
-      </div>
-      <div class="solution-visual">
-        <div class="sv-header">Live Session Data</div>
-        <div class="sv-row">
-          <span class="sv-dot" style="background:#C01E5C;"></span>
-          <span class="sv-label">Pain level (before)</span>
-          <div class="sv-bar-wrap"><div class="sv-bar" style="width:61%;"></div></div>
-          <span class="sv-val">6.1</span>
-        </div>
-        <div class="sv-row">
-          <span class="sv-dot" style="background:#22c55e;"></span>
-          <span class="sv-label">Pain level (after)</span>
-          <div class="sv-bar-wrap"><div class="sv-bar" style="width:12%;background:#22c55e;"></div></div>
-          <span class="sv-val" style="color:#22c55e;">1.2</span>
-        </div>
-        <div class="sv-row">
-          <span class="sv-dot" style="background:#C01E5C;"></span>
-          <span class="sv-label">TENS Amplitude</span>
-          <span class="sv-label" style="flex:none;"></span>
-          <span class="sv-val">37.1 mA</span>
-        </div>
-        <div class="sv-row">
-          <span class="sv-dot" style="background:#C01E5C;"></span>
-          <span class="sv-label">Frequency</span>
-          <span class="sv-label" style="flex:none;"></span>
-          <span class="sv-val">82.0 Hz</span>
-        </div>
-        <div class="sv-row">
-          <span class="sv-dot" style="background:#C01E5C;"></span>
-          <span class="sv-label">Screening risk</span>
-          <span class="sv-label" style="flex:none;"></span>
-          <span class="sv-val">99.5%</span>
-        </div>
-        <div class="sv-row">
-          <span class="sv-dot" style="background:#f59e0b;"></span>
-          <span class="sv-label">Skin temp (Sensor B)</span>
-          <span class="sv-label" style="flex:none;"></span>
-          <span class="sv-val">37.4°C</span>
-        </div>
-        <div style="margin-top:1.5rem;padding:1rem;background:var(--blush);border-radius:10px;font-size:0.8rem;color:var(--rose);font-weight:500;">
-          ⚠ AI Early Screening Result: High Likelihood — Recommend specialist evaluation.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="how">
-  <div class="inner">
-    <div class="section-label">How It Works</div>
-    <h2 class="section-title">Simple to use.<br><em>Sophisticated inside.</em></h2>
-    <div class="how-steps">
-      <div class="step">
-        <div class="step-num">01</div>
-        <div class="step-title">Wear the Ovella Pouch</div>
-        <p>Place the wearable device against your lower abdomen. The electrode pads and dual thermistors activate automatically, creating a baseline reading before therapy begins.</p>
-        <span class="step-tag">Hardware</span>
-      </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <div class="step-title">Log via Companion App</div>
-        <p>Report your current pain level, location, type, and associated symptoms. The app syncs with the device over Bluetooth and captures cycle-phase context for the AI model.</p>
-        <span class="step-tag">App · iOS & Android</span>
-      </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <div class="step-title">AI Personalizes Your Treatment</div>
-        <p>After each session, Ovella's adaptive model updates your optimal TENS parameters based on pain reduction feedback — getting smarter with every use.</p>
-        <span class="step-tag">AI · Random Forest + MNN</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COMPARE -->
-<section class="compare" id="compare">
-  <div class="inner">
-    <div class="compare-intro">
-      <div class="section-label">Why Ovella</div>
-      <h2 class="section-title">The only solution that<br>checks <em>every box.</em></h2>
-      <p>Existing treatments trade off cost, invasiveness, personalization, and long-term effectiveness. Ovella is the first to deliver across all six dimensions simultaneously.</p>
-    </div>
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Treatment</th>
-          <th>Adaptive AI</th>
-          <th>Non-Invasive</th>
-          <th>Low Side Effects</th>
-          <th>Long-Term Tracking</th>
-          <th>Cost</th>
-          <th>Proactive Care</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="ov-row">
-          <td>Ovella</td>
-          <td class="check">✓</td>
-          <td class="check">✓</td>
-          <td class="check">✓</td>
-          <td class="check">✓</td>
-          <td class="price-cell ov">$150 + $15/yr</td>
-          <td class="check">✓</td>
-        </tr>
-        <tr>
-          <td>Laparoscopic Surgery</td>
-          <td class="cross">✕</td>
-          <td class="cross">✕</td>
-          <td class="cross">✕</td>
-          <td class="cross">✕</td>
-          <td class="price-cell">$5K–$15K+</td>
-          <td class="cross">✕</td>
-        </tr>
-        <tr>
-          <td>Oral Contraceptives</td>
-          <td class="cross">✕</td>
-          <td class="check">✓</td>
-          <td class="cross">✕</td>
-          <td class="cross">✕</td>
-          <td class="price-cell">$130–$1,800/yr</td>
-          <td class="cross">✕</td>
-        </tr>
-        <tr>
-          <td>Orilissa</td>
-          <td class="cross">✕</td>
-          <td class="check">✓</td>
-          <td class="cross">✕</td>
-          <td class="cross">✕</td>
-          <td class="price-cell">$12K–$15K/yr</td>
-          <td class="cross">✕</td>
-        </tr>
-        <tr>
-          <td>Livia</td>
-          <td class="cross">✕</td>
-          <td class="check">✓</td>
-          <td class="check">✓</td>
-          <td class="cross">✕</td>
-          <td class="price-cell">$129–$228</td>
-          <td class="cross">✕</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- MARKET -->
-<section class="market" id="market">
-  <div class="inner">
-    <div class="section-label">Market Opportunity</div>
-    <h2 class="section-title">A $31.4B problem<br><em>ready to be solved.</em></h2>
-    <div class="market-grid">
-      <div>
-        <p>The global FemTech market is projected to reach $97.2 billion by 2030 (CAGR 13–18%). Within this, endometriosis care represents a massive, underserved niche — and Ovella is positioned to lead it.</p>
-        <p style="margin-top:1rem;">We're launching in Japan with plans to expand to the U.S., targeting regulatory clearance through both PMDA and FDA 510(k) pathways. Our 5-year projection reaches $20.7M in total revenue.</p>
-      </div>
-      <div class="tam-rings">
-        <div class="tam-ring a">
-          <div>
-            <div class="tam-ring-label">TAM · Global Endometriosis</div>
-            <div class="tam-ring-sub">190M women worldwide</div>
-          </div>
-          <div class="tam-ring-val">$31.4B</div>
-        </div>
-        <div class="tam-ring b">
-          <div>
-            <div class="tam-ring-label">SAM · Japan + United States</div>
-            <div class="tam-ring-sub">Primary launch markets</div>
-          </div>
-          <div class="tam-ring-val">$3.8B</div>
-        </div>
-        <div class="tam-ring c">
-          <div>
-            <div class="tam-ring-label">SOM · 0.5% of SAM by 2029</div>
-            <div class="tam-ring-sub">Conservative early-stage goal</div>
-          </div>
-          <div class="tam-ring-val">$19M</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- VALIDATION -->
-<section class="validation">
-  <div class="inner">
-    <div class="section-label">Validation</div>
-    <h2 class="section-title">Backed by real patients<br>and <em>real regulators.</em></h2>
-    <div class="val-grid">
-      <div class="val-card">
-        <div class="val-big">200</div>
-        <h3>Patient Responses</h3>
-        <p>Surveyed across 5 endometriosis forums — all suspected or confirmed patients — providing direct insight into unmet needs and treatment preferences.</p>
-      </div>
-      <div class="val-card">
-        <div class="val-big">86%</div>
-        <h3>Interest in Personalization</h3>
-        <p>Of respondents said yes or maybe to personalized pain management settings — validating our core AI-adaptive value proposition directly from the target market.</p>
-      </div>
-      <div class="val-card">
-        <div class="val-big">PMDA</div>
-        <h3>Regulatory Engagement</h3>
-        <p>In active consultation with Japan's PMDA and aligning with IEC medical device standards for electrical safety, thermal limits, and clinical compliance ahead of market launch.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TEAM -->
-<section class="team" id="team">
-  <div class="inner">
-    <div class="section-label">Our Team</div>
-    <h2 class="section-title">Built by women<br><em>who understand the pain.</em></h2>
-    <p style="color:var(--muted);line-height:1.75;max-width:520px;margin-top:1rem;">Ovella began when Misa underwent laparoscopic surgery for a 20cm ovarian tumor. That experience of uncertainty, fear, and inadequate support drove us to build a better solution for women everywhere.</p>
-    <div class="team-grid">
-      <div class="team-card">
-        <div class="team-avatar">SH</div>
-        <div class="team-name">Sara Hishinuma</div>
-        <div class="team-role">Co-founder & CEO</div>
-        <p>Leads business strategy, market development, and stakeholder partnerships. Driving Ovella's go-to-market approach across Japan and the U.S.</p>
-      </div>
-      <div class="team-card">
-        <div class="team-avatar">MY</div>
-        <div class="team-name">Misa Yamamoto</div>
-        <div class="team-role">Co-founder & CTO</div>
-        <p>Develops the hardware, AI models, and companion app. Brings firsthand patient experience and deep technical expertise to every design decision.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section" id="contact">
-  <div class="section-label">Join Ovella</div>
-  <h2>Earlier answers.<br><em>Real relief.</em><br>Long-term support.</h2>
-  <p>Be among the first to experience personalized endometriosis care. Join our waitlist for early access, updates, and the chance to shape Ovella's development.</p>
-  <div class="cta-group">
-    <a href="mailto:hello@ovella.co" class="btn-white">Join the Waitlist →</a>
-    <a href="#problem" class="btn-ghost">Learn More</a>
-  </div>
+<section style="background: var(--blush);">
+  <h1>What we're building</h1>
+  <p>
+    Ovella combines TENS therapy, localized heat monitoring, and adaptive algorithms to explore more personalized, continuous support for managing chronic pelvic pain.
+  </p>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Ovella</div>
-  <p>© 2025 Ovella · Earlier answers. Real relief. Long-term support.</p>
+  <div>Ovella © 2026</div>
+  <p>
+    Ovella is a prototype and not a medical device. Not intended for diagnosis or treatment.
+  </p>
 </footer>
 
 </body>
