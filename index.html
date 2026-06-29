@@ -1,166 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ovella — Personalized Pain Management</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --rose: #C01E5C;
-  --blush: #FFF0F3;
-  --cream: #FDF8F5;
-  --charcoal: #1A1018;
-  --muted: #7A6070;
-}
-
-body {
-  margin: 0;
-  font-family: 'DM Sans', sans-serif;
-  background: var(--cream);
-  color: var(--charcoal);
-}
-
-/* HERO */
-.hero {
-  padding: 6rem 2rem;
-  text-align: center;
-}
-
-h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3rem;
-  font-weight: 300;
-}
-
-em { color: var(--rose); }
-
-p {
-  color: var(--muted);
-  max-width: 500px;
-  margin: 1rem auto;
-  line-height: 1.6;
-}
-
-/* BUTTON */
-input {
-  padding: 0.8rem 1rem;
-  border-radius: 999px;
-  border: 1px solid #eee;
-  width: 250px;
-}
-
-button {
-  padding: 0.8rem 1.5rem;
-  border-radius: 999px;
-  border: none;
-  background: var(--rose);
-  color: white;
-  cursor: pointer;
-  margin-left: 0.5rem;
-}
-
-/* STATS */
-.stats {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.stat {
-  text-align: center;
-}
-
-.stat h2 {
-  color: var(--rose);
-  margin: 0;
-}
-
-/* SECTION */
-section {
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-/* FOOTER */
-footer {
-  padding: 2rem;
-  text-align: center;
-  font-size: 0.8rem;
-  color: #aaa;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ovella | Women's Health Technology</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Ovella home">
+        <img class="brand-logo" src="ovellalogo.jpg" alt="Ovella logo">
+        <span>Ovella</span>
+      </a>
+      <div class="nav-links">
+        <a href="#problem">Problem</a>
+        <a href="#solution">Solution</a>
+        <a href="#stage">Stage</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>
-    Pain management,<br>
-    <em>finally personalized</em>
-  </h1>
+  <main id="top">
+    <section class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Women's health technology initiative</p>
+          <h1>Ovella</h1>
+          <p class="tagline">
+            A student-founded women's health technology initiative developing a wearable and
+            companion app concept for endometriosis-related, menstrual, and pelvic pain support
+            through warmth, gentle neuromodulation, tracking, personalization, and education.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#contact">Get in touch</a>
+            <a class="button secondary" href="#solution">Explore the concept</a>
+          </div>
+        </div>
 
-  <p>
-    Ovella is a prototype wearable exploring new ways to deliver personalized, non-invasive relief for people living with endometriosis.
-  </p>
+        <div class="hero-visual" aria-label="Ovella concept preview">
+          <div class="logo-card">
+            <div class="logo-orbit">
+              <img class="hero-logo" src="ovellalogo.jpg" alt="Ovella logo">
+              <span class="logo-name">Ovella</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- EMAIL FORM -->
-  <form action="https://formspree.io/f/mqewejeg" method="POST">
-    <input type="email" name="email" placeholder="Enter your email" required>
-    <input type="hidden" name="interest" value="ovella_waitlist">
-    <button type="submit">Join Waitlist</button>
-  </form>
+    <section id="problem" class="section problem">
+      <div class="container two-column">
+        <div>
+          <p class="eyebrow">The problem</p>
+          <h2>Pain is too often normalized, minimized, or misunderstood.</h2>
+        </div>
+        <div class="section-copy">
+          <div class="stat-grid" aria-label="Endometriosis awareness context">
+            <div>
+              <strong>1 in 10</strong>
+              <span>women are estimated to be affected by endometriosis.</span>
+            </div>
+            <div>
+              <strong>4-11 years</strong>
+              <span>is often cited as the range for delayed diagnosis.</span>
+            </div>
+          </div>
+          <p>
+            Many of people deal with menstrual or pelvic pain without knowing how to explain it,
+            track it, or ask for help. Endometriosis is still not widely understood, and it can be
+            hard to tell when pain that feels "normal" every month is actually something that
+            deserves more attention.
+          </p>
+          <p>
+            Ovella was created to help make that process less confusing. Through technology,
+            education, and awareness, we hope to help people better understand their symptoms and
+            feel more supported.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <!-- STATS -->
-  <div class="stats">
-    <div class="stat">
-      <h2>190M</h2>
-      <div>women affected</div>
+    <section id="solution" class="section solution">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">The solution concept</p>
+          <h2>A wearable and app designed around comfort, awareness, and personalization.</h2>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <span class="card-icon">01</span>
+            <h3>Localized warmth</h3>
+            <p>
+              A noninvasive wearable pouch concept exploring controlled heat and temperature
+              sensing to support comfort and help users understand repeated patterns.
+            </p>
+          </article>
+          <article class="card">
+            <span class="card-icon">02</span>
+            <h3>TENS-style input</h3>
+            <p>
+              Gentle neuromodulation-style stimulation is being explored as an adjustable sensory
+              support feature within safe, non-clinical prototype constraints.
+            </p>
+          </article>
+          <article class="card">
+            <span class="card-icon">03</span>
+            <h3>Adaptive app</h3>
+            <p>
+              A companion app concept combines symptom check-ins, cycle context, session notes,
+              and future personalization features based on user-entered experiences.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="stage" class="section stage">
+      <div class="container stage-grid">
+        <div>
+          <p class="eyebrow">Current stage</p>
+          <h2>Prototype stage</h2>
+          <p class="section-copy">
+            Ovella is currently in contact with mentors while moving through prototype development.
+            The team has completed most of its research and concept work, including survey outreach
+            with 200 respondents across endometriosis communities, and is focused on safe,
+            non-clinical prototyping before any health-related claims or clinical use.
+          </p>
+        </div>
+        <div class="timeline" aria-label="Ovella current development priorities">
+          <div class="timeline-item">
+            <span></span>
+            <p>Research and concept mostly completed, informed by community feedback</p>
+          </div>
+          <div class="timeline-item">
+            <span></span>
+            <p>In contact with mentors for guidance and feedback</p>
+          </div>
+          <div class="timeline-item">
+            <span></span>
+            <p>Prototype stage with safety-first constraints</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section education" aria-labelledby="education-title">
+      <div class="container education-panel">
+        <div>
+          <p class="eyebrow">Education and service</p>
+          <h2 id="education-title">Education and service</h2>
+          <p class="section-copy">More information coming soon as Ovella develops its outreach and education plans.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container contact-box">
+        <p class="eyebrow">Contact</p>
+        <h2>Interested in Ovella's work?</h2>
+        <div class="contact-actions">
+          <a class="button primary" href="mailto:ovella.shmy@gmail.com">ovella.shmy@gmail.com</a>
+          <a class="text-link" href="https://www.instagram.com/teamovella/" target="_blank" rel="noreferrer">Instagram @teamovella</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>2026 Ovella. Research-stage concept. Not medical advice or a clinical product.</p>
     </div>
-    <div class="stat">
-      <h2>4–11 yrs</h2>
-      <div>to diagnosis</div>
-    </div>
-    <div class="stat">
-      <h2>Prototype</h2>
-      <div>AI model in development</div>
-    </div>
-  </div>
-
-  <!-- AWARDS -->
-  <p style="margin-top:1.5rem; font-size:0.8rem;">
-    As seen in <strong>Blue Ocean Top 100 (2026)</strong> · 
-    <strong>Diamond Challenge Semifinalist</strong>
-  </p>
-</div>
-
-<!-- PROBLEM -->
-<section>
-  <h1>The problem</h1>
-  <p>
-    Endometriosis affects 1 in 10 women, yet diagnosis can take years and treatment options remain limited, expensive, and often invasive.
-  </p>
-</section>
-
-<!-- SOLUTION -->
-<section style="background: var(--blush);">
-  <h1>What we're building</h1>
-  <p>
-    Ovella combines TENS therapy, localized heat monitoring, and adaptive algorithms to explore more personalized, continuous support for managing chronic pelvic pain.
-  </p>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div>Ovella © 2026</div>
-  <p>
-    Ovella is a prototype and not a medical device. Not intended for diagnosis or treatment.
-  </p>
-</footer>
-
+  </footer>
 </body>
 </html>
